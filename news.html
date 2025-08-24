@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Барбершоп «Бородинский» — Новости</title>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="page-header">
+    <nav class="main-nav">
+      <a class="main-nav__brand" href="index.html">
+        <img src="img/logo.svg" width="111" height="24" alt="Логотип Барбершоп Бородинский">
+      </a>
+      <ul class="main-nav__list">
+        <li class="main-nav__item"><a class="main-nav__link" href="info.html">Информация</a></li>
+        <li class="main-nav__item"><a class="main-nav__link main-nav__link--active" href="news.html">Новости</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="price.html">Прайс-лист</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="catalog.html">Магазин</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="contacts.html">Контакты</a></li>
+      </ul>
+      <div class="user-nav">
+        <a class="user-nav__login" href="#" id="login-btn">Вход</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Модальное окно -->
+  <div class="modal-overlay visually-hidden" id="login-modal">
+    <div class="modal">
+      <button class="modal__close" type="button" aria-label="Закрыть">&times;</button>
+      <div class="modal-content">
+        <h2 class="modal-title">ЛИЧНЫЙ КАБИНЕТ</h2>
+        <p class="modal-text">ВВЕДИТЕ ПОЖАЛУЙСТА СВОЙ ЛОГИН И ПАРОЛЬ</p>
+        <form class="modal-form" action="#" method="post">
+          <label for="modal-email">Email</label>
+          <input id="modal-email" type="email" placeholder="Введите ваш email" required>
+          <label for="modal-password">Пароль</label>
+          <input id="modal-password" type="password" placeholder="Введите ваш пароль" required>
+          <button class="modal-submit" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content: News -->
+  <main class="page-main">
+    <section class="news-page">
+      <h1 class="news-page__title">Новости</h1>
+      <nav class="breadcrumb">
+        <a class="breadcrumb__link" href="index.html">Главная</a>
+        <span class="breadcrumb__sep">◆</span>
+        <span class="breadcrumb__current">Новости</span>
+      </nav>
+
+      <h2 class="news-page__subtitle">Актуальные события</h2>
+      
+      <div class="news-page__container">
+                 <article class="news-page__item" data-page="1">
+           <div class="news-page__image">
+             <img src="img/photo.jpg" width="300" height="200" alt="Новая коллекция средств">
+           </div>
+          <div class="news-page__content">
+            <h3 class="news-page__item-title">НОВАЯ КОЛЛЕКЦИЯ СРЕДСТВ</h3>
+            <p class="news-page__text">
+              Мы рады представить вам новую коллекцию профессиональных средств для ухода за волосами и бородой. 
+              В коллекцию вошли эксклюзивные продукты от ведущих мировых брендов, которые помогут создать идеальный образ.
+            </p>
+            <time class="news-page__date" datetime="2024-01-15">15 января 2024</time>
+            <a class="news-page__link" href="#">Читать подробнее</a>
+          </div>
+        </article>
+
+                 <article class="news-page__item" data-page="1">
+           <div class="news-page__image">
+             <img src="img/photo.jpg" width="300" height="200" alt="Мастер-класс по стрижке">
+           </div>
+          <div class="news-page__content">
+            <h3 class="news-page__item-title">МАСТЕР-КЛАСС ПО СТРИЖКЕ</h3>
+            <p class="news-page__text">
+              Приглашаем всех желающих на мастер-класс по созданию классических мужских стрижек. 
+              Наш ведущий мастер поделится секретами профессии и покажет современные техники стрижки.
+            </p>
+            <time class="news-page__date" datetime="2024-01-10">10 января 2024</time>
+            <a class="news-page__link" href="#">Записаться на мастер-класс</a>
+          </div>
+        </article>
+
+                 <article class="news-page__item" data-page="1">
+           <div class="news-page__image">
+             <img src="img/photo.jpg" width="300" height="200" alt="Расширение часов работы">
+           </div>
+          <div class="news-page__content">
+            <h3 class="news-page__item-title">РАСШИРЕНИЕ ЧАСОВ РАБОТЫ</h3>
+            <p class="news-page__text">
+              С радостью сообщаем, что мы расширяем часы работы! Теперь барбершоп работает с 9:00 до 22:00 
+              без выходных. Это позволит вам посетить нас в любое удобное время.
+            </p>
+            <time class="news-page__date" datetime="2024-01-05">5 января 2024</time>
+            <a class="news-page__link" href="#">Посмотреть расписание</a>
+          </div>
+        </article>
+
+                 <article class="news-page__item" data-page="1">
+           <div class="news-page__image">
+             <img src="img/photo.jpg" width="300" height="200" alt="Новый мастер в команде">
+           </div>
+           <div class="news-page__content">
+             <h3 class="news-page__item-title">НОВЫЙ МАСТЕР В КОМАНДЕ</h3>
+             <p class="news-page__text">
+               К нашей команде присоединился новый мастер с 10-летним опытом работы. 
+               Специалист по современным и классическим стрижкам, а также эксперт по уходу за бородой.
+             </p>
+             <time class="news-page__date" datetime="2023-12-28">28 декабря 2023</time>
+             <a class="news-page__link" href="#">Познакомиться с мастером</a>
+           </div>
+         </article>
+
+                   <article class="news-page__item" data-page="2">
+            <div class="news-page__image">
+              <img src="img/photo.jpg" width="300" height="200" alt="Скидки на услуги">
+            </div>
+           <div class="news-page__content">
+             <h3 class="news-page__item-title">СКИДКИ НА УСЛУГИ</h3>
+             <p class="news-page__text">
+               В честь Нового года мы предлагаем специальные скидки на все услуги! 
+               Стрижка, стрижка бороды и накрутка усов со скидкой 20% до конца января.
+             </p>
+             <time class="news-page__date" datetime="2023-12-25">25 декабря 2023</time>
+             <a class="news-page__link" href="#">Записаться со скидкой</a>
+           </div>
+         </article>
+
+                   <article class="news-page__item" data-page="2">
+            <div class="news-page__image">
+              <img src="img/photo.jpg" width="300" height="200" alt="Подарочные сертификаты">
+            </div>
+           <div class="news-page__content">
+             <h3 class="news-page__item-title">ПОДАРОЧНЫЕ СЕРТИФИКАТЫ</h3>
+             <p class="news-page__text">
+               Идеальный подарок для настоящего мужчины! Подарочные сертификаты на любую сумму. 
+               Красивое оформление и возможность выбора услуг получателем.
+             </p>
+             <time class="news-page__date" datetime="2023-12-20">20 декабря 2023</time>
+             <a class="news-page__link" href="#">Купить сертификат</a>
+           </div>
+         </article>
+
+                   <article class="news-page__item" data-page="2">
+            <div class="news-page__image">
+              <img src="img/photo.jpg" width="300" height="200" alt="Новые инструменты">
+            </div>
+           <div class="news-page__content">
+             <h3 class="news-page__item-title">НОВЫЕ ИНСТРУМЕНТЫ</h3>
+             <p class="news-page__text">
+               Мы обновили наш арсенал профессиональных инструментов! 
+               Теперь используем только лучшие ножницы, машинки и бритвы от мировых производителей.
+             </p>
+             <time class="news-page__date" datetime="2023-12-15">15 декабря 2023</time>
+             <a class="news-page__link" href="#">Узнать больше</a>
+           </div>
+         </article>
+
+                   <article class="news-page__item" data-page="2">
+            <div class="news-page__image">
+              <img src="img/photo.jpg" width="300" height="200" alt="Конкурс стилей">
+            </div>
+           <div class="news-page__content">
+             <h3 class="news-page__item-title">КОНКУРС СТИЛЕЙ</h3>
+             <p class="news-page__text">
+               Объявляем конкурс на лучшую мужскую стрижку! Присылайте фото своих работ 
+               и выигрывайте призы. Главный приз - годовой абонемент на все услуги.
+             </p>
+             <time class="news-page__date" datetime="2023-12-10">10 декабря 2023</time>
+             <a class="news-page__link" href="#">Участвовать в конкурсе</a>
+           </div>
+         </article>
+
+                   <article class="news-page__item" data-page="3">
+            <div class="news-page__image">
+              <img src="img/photo.jpg" width="300" height="200" alt="Обновление интерьера">
+            </div>
+           <div class="news-page__content">
+             <h3 class="news-page__item-title">ОБНОВЛЕНИЕ ИНТЕРЬЕРА</h3>
+             <p class="news-page__text">
+               Мы обновили интерьер нашего барбершопа! Новый дизайн в стиле ретро-классик 
+               создает атмосферу настоящего мужского клуба начала XX века.
+             </p>
+             <time class="news-page__date" datetime="2023-12-05">5 декабря 2023</time>
+             <a class="news-page__link" href="#">Посмотреть фото</a>
+           </div>
+         </article>
+
+                   <article class="news-page__item" data-page="3">
+            <div class="news-page__image">
+              <img src="img/photo.jpg" width="300" height="200" alt="Онлайн запись">
+            </div>
+           <div class="news-page__content">
+             <h3 class="news-page__item-title">ОНЛАЙН ЗАПИСЬ</h3>
+             <p class="news-page__text">
+               Теперь вы можете записаться к нам онлайн! Удобная система бронирования 
+               позволяет выбрать время, мастера и услугу в любое время суток.
+             </p>
+             <time class="news-page__date" datetime="2023-12-01">1 декабря 2023</time>
+             <a class="news-page__link" href="#">Записаться онлайн</a>
+           </div>
+         </article>
+       </div>
+
+                           <div class="news-page__pagination">
+          <a class="news-page__pagination-link news-page__pagination-link--prev" href="#">← Предыдущая</a>
+          <span class="news-page__pagination-current news-page__pagination-current--active">1</span>
+          <a class="news-page__pagination-link" href="#">2</a>
+          <a class="news-page__pagination-link" href="#">3</a>
+          <a class="news-page__pagination-link news-page__pagination-link--next" href="#">Следующая →</a>
+        </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="page-footer__container">
+      <div class="page-footer__contacts">
+        <p class="page-footer__text">
+          Барбершоп «Бородинский»<br>
+          Адрес: г. Санкт-Петербург, б. Конюшенная, д. 19/8<br>
+          Как нас найти?<br>
+          Телефон: +7 (495) 666-02-66
+        </p>
+      </div>
+      <div class="page-footer__social social">
+        <p class="social__title">Давайте дружить!</p>
+        <ul class="social__list">
+          <li class="social__item">
+            <a class="social__link social__link--vk" href="#" aria-label="Мы в ВКонтакте"><span class="visually-hidden">VK</span></a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--facebook" href="#" aria-label="Мы в Facebook"><span class="visually-hidden">Facebook</span></a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--instagram" href="#" aria-label="Мы в Instagram"><span class="visually-hidden">Instagram</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="page-footer__copyright">
+        <p class="page-footer__text">Разработано:</p>
+        <a class="page-footer__link" href="https://htmlacademy.ru">HTML Academy</a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

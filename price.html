@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Барбершоп «Бородинский» — Прайс-лист</title>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="page-header">
+    <nav class="main-nav">
+      <a class="main-nav__brand" href="index.html">
+        <img src="img/logo.svg" width="111" height="24" alt="Логотип Барбершоп Бородинский">
+      </a>
+      <ul class="main-nav__list">
+        <li class="main-nav__item"><a class="main-nav__link" href="info.html">Информация</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="news.html">Новости</a></li>
+        <li class="main-nav__item"><a class="main-nav__link main-nav__link--active" href="price.html">Прайс-лист</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="catalog.html">Магазин</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="contacts.html">Контакты</a></li>
+      </ul>
+      <div class="user-nav">
+        <a class="user-nav__login" href="#" id="login-btn">Вход</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Модальное окно -->
+  <div class="modal-overlay visually-hidden" id="login-modal">
+    <div class="modal">
+      <button class="modal__close" type="button" aria-label="Закрыть">&times;</button>
+      <div class="modal-content">
+        <h2 class="modal-title">ЛИЧНЫЙ КАБИНЕТ</h2>
+        <p class="modal-text">ВВЕДИТЕ ПОЖАЛУЙСТА СВОЙ ЛОГИН И ПАРОЛЬ</p>
+        <form class="modal-form" action="#" method="post">
+          <label for="modal-email">Email</label>
+          <input id="modal-email" type="email" placeholder="Введите ваш email" required>
+          <label for="modal-password">Пароль</label>
+          <input id="modal-password" type="password" placeholder="Введите ваш пароль" required>
+          <button class="modal-submit" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content: Price List -->
+  <main class="page-main">
+    <section class="price">
+      <h1 class="price__title">Прайс-лист</h1>
+      <nav class="breadcrumb">
+        <a class="breadcrumb__link" href="index.html">Главная</a>
+        <span class="breadcrumb__sep">◆</span>
+        <span class="breadcrumb__current">Прайс-лист</span>
+      </nav>
+
+      <h2 class="price__subtitle price__subtitle--main">Истинно мужская классика</h2>
+      
+      <div class="price__container">
+        <div class="price__intro">
+          <p class="price__text price__text--left">
+            МЫ ИСПОЛЬЗУЕМ ТОЛЬКО<br>
+            ЛУЧШИЕ СРЕДСТВА:
+          </p>
+          <ul class="price__list">
+            <li>◆ BAXTER OF CALIFORNIA</li>
+            <li>◆ MR NATTY</li>
+            <li>◆ SUAVECITO</li>
+            <li>◆ MALIN+GOETZ</li>
+          </ul>
+        </div>
+        <div class="price__table-wrapper">
+          <h2 class="price__subtitle price__subtitle--services">Цены на услуги<br> наших мастеров:</h2>
+          <table class="price__table">
+            <thead>
+              <tr>
+                <th>Услуга</th>
+                <th>Стоимость</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Стрижка</td>
+                <td>1500 ₽</td>
+              </tr>
+              <tr>
+                <td>Стрижка бороды</td>
+                <td>500 ₽</td>
+              </tr>
+              <tr>
+                <td>Накрутка усов</td>
+                <td>350 ₽</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="price__about">
+        <h2 class="price__subtitle price__subtitle--about">Несколько слов о нас:</h2>
+        <p class="price__text">
+          Наша парикмахерская занимается исключительно мужскими стрижками.  
+          Стрижка каждого клиента для нас — это уникальная и продуманная до мелочей работа.  
+          Мы не работаем на количество, мы делаем качество.
+        </p>
+        <p class="price__text">
+          Наша мастерская расположена в центре города, поэтому сделать стильную стрижку можно в любое время, даже в обеденный перерыв.  
+          Здесь вы можете погрузиться в удобную для вас атмосферу, чувствовать себя комфортно и свободно!
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="page-footer__container">
+      <div class="page-footer__contacts">
+        <p class="page-footer__text">
+          Барбершоп «Бородинский»<br>
+          Адрес: г. Санкт-Петербург, б. Конюшенная, д. 19/8<br>
+          Как нас найти?<br>
+          Телефон: +7 (495) 666-02-66
+        </p>
+      </div>
+      <div class="page-footer__social social">
+        <p class="social__title">Давайте дружить!</p>
+        <ul class="social__list">
+          <li class="social__item">
+            <a class="social__link social__link--vk" href="#" aria-label="Мы в ВКонтакте"><span class="visually-hidden">VK</span></a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--facebook" href="#" aria-label="Мы в Facebook"><span class="visually-hidden">Facebook</span></a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--instagram" href="#" aria-label="Мы в Instagram"><span class="visually-hidden">Instagram</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="page-footer__copyright">
+        <p class="page-footer__text">Разработано:</p>
+        <a class="page-footer__link" href="https://htmlacademy.ru">HTML Academy</a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

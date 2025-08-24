@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Барбершоп «Бородинский» — Контакты</title>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="page-header">
+    <nav class="main-nav">
+      <a class="main-nav__brand" href="index.html">
+        <img src="img/logo.svg" width="111" height="24" alt="Логотип Барбершоп Бородинский">
+      </a>
+      <ul class="main-nav__list">
+        <li class="main-nav__item"><a class="main-nav__link" href="info.html">Информация</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="news.html">Новости</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="price.html">Прайс-лист</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="catalog.html">Магазин</a></li>
+        <li class="main-nav__item"><a class="main-nav__link main-nav__link--active" href="contacts.html">Контакты</a></li>
+      </ul>
+      <div class="user-nav">
+        <a class="user-nav__login" href="#" id="login-btn">Вход</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Модальное окно -->
+  <div class="modal-overlay visually-hidden" id="login-modal">
+    <div class="modal">
+      <button class="modal__close" type="button" aria-label="Закрыть">&times;</button>
+      <div class="modal-content">
+        <h2 class="modal-title">ЛИЧНЫЙ КАБИНЕТ</h2>
+        <p class="modal-text">ВВЕДИТЕ ПОЖАЛУЙСТА СВОЙ ЛОГИН И ПАРОЛЬ</p>
+        <form class="modal-form" action="#" method="post">
+          <label for="modal-email">Email</label>
+          <input id="modal-email" type="email" placeholder="Введите ваш email" required>
+          <label for="modal-password">Пароль</label>
+          <input id="modal-password" type="password" placeholder="Введите ваш пароль" required>
+          <button class="modal-submit" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content: Contacts -->
+  <main class="page-main">
+    <section class="contacts-page">
+      <h1 class="contacts-page__title">Контакты</h1>
+      
+      <nav class="breadcrumb">
+        <a class="breadcrumb__link" href="index.html">Главная</a>
+        <span class="breadcrumb__sep">◆</span>
+        <span class="breadcrumb__current">Контакты</span>
+      </nav>
+
+      <div class="contacts-page__container">
+        <div class="contacts-page__info">
+          <h2 class="contacts-page__subtitle">Как нас найти</h2>
+          
+          <div class="contacts-page__item">
+            <h3 class="contacts-page__item-title">Адрес</h3>
+            <p class="contacts-page__text">г. Санкт-Петербург, ул. Большая Конюшенная, д. 19/8</p>
+          </div>
+
+          <div class="contacts-page__item">
+            <h3 class="contacts-page__item-title">Телефон</h3>
+            <p class="contacts-page__text">+7 (812) 555-66-66</p>
+          </div>
+
+          <div class="contacts-page__item">
+            <h3 class="contacts-page__item-title">Время работы</h3>
+            <p class="contacts-page__text">пн — пт: с 10:00 до 22:00<br>сб — вс: с 10:00 до 19:00</p>
+          </div>
+
+          <div class="contacts-page__item">
+            <h3 class="contacts-page__item-title">Как добраться</h3>
+            <p class="contacts-page__text">От метро "Невский проспект" идти по Невскому проспекту в сторону увеличения нумерации домов. Дом 19/8 находится на углу Невского проспекта и Большой Конюшенной улицы.</p>
+          </div>
+
+          <div class="contacts-page__buttons">
+            <a href="#" class="contacts-page__btn" id="map-btn">Как проехать</a>
+            <a href="#" class="contacts-page__btn">Обратная связь</a>
+          </div>
+        </div>
+
+        <div class="contacts-page__map">
+          <h2 class="contacts-page__subtitle">Карта проезда</h2>
+          <div class="contacts-page__map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.5991043651586!2d30.3142333!3d59.9387163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCz!5e0!3m2!1sru!2sru!4v1645000000000!5m2!1sru!2sru" 
+              width="100%" 
+              height="400" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="page-footer__container">
+      <div class="page-footer__contacts">
+        <p class="page-footer__text">
+          Барбершоп «Бородинский»<br>
+          Адрес: г. Санкт-Петербург, б. Конюшенная, д. 19/8<br>
+          Как нас найти?<br>
+          Телефон: +7 (495) 666-02-66
+        </p>
+      </div>
+      <div class="page-footer__social social">
+        <p class="social__title">Давайте дружить!</p>
+        <ul class="social__list">
+          <li class="social__item">
+            <a class="social__link social__link--vk" href="#" aria-label="Мы в ВКонтакте"><span class="visually-hidden">VK</span></a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--facebook" href="#" aria-label="Мы в Facebook"><span class="visually-hidden">Facebook</span></a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--instagram" href="#" aria-label="Мы в Instagram"><span class="visually-hidden">Instagram</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="page-footer__copyright">
+        <p class="page-footer__text">Разработано:</p>
+        <a class="page-footer__link" href="https://htmlacademy.ru">HTML Academy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
