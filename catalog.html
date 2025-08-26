@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Барбершоп «Бородинский» — Магазин</title>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="page-header">
+    <nav class="main-nav">
+      <a class="main-nav__brand" href="index.html">
+        <img src="img/logo.svg" width="111" height="24" alt="Логотип Барбершоп Бородинский">
+      </a>
+      <ul class="main-nav__list">
+        <li class="main-nav__item"><a class="main-nav__link" href="info.html">Информация</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="news.html">Новости</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="price.html">Прайс-лист</a></li>
+        <li class="main-nav__item"><a class="main-nav__link main-nav__link--active" href="catalog.html">Магазин</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="contacts.html">Контакты</a></li>
+      </ul>
+      <div class="user-nav">
+        <a class="user-nav__login" href="#" id="login-btn">Вход</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Модальное окно -->
+  <div class="modal-overlay visually-hidden" id="login-modal">
+    <div class="modal">
+      <button class="modal__close" type="button" aria-label="Закрыть">&times;</button>
+      <div class="modal-content">
+        <h2 class="modal-title">ЛИЧНЫЙ КАБИНЕТ</h2>
+        <p class="modal-text">ВВЕДИТЕ ПОЖАЛУЙСТА СВОЙ ЛОГИН И ПАРОЛЬ</p>
+        <form class="modal-form" action="#" method="post">
+          <label for="modal-email">Email</label>
+          <input id="modal-email" type="email" placeholder="Введите ваш email" required>
+          <label for="modal-password">Пароль</label>
+          <input id="modal-password" type="password" placeholder="Введите ваш пароль" required>
+          <button class="modal-submit" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content: Shop -->
+  <main class="page-main">
+    <section class="catalog">
+      <h1 class="catalog__title">СРЕДСТВА ДЛЯ УХОДА</h1>
+      
+      <nav class="breadcrumb">
+        <a class="breadcrumb__link" href="index.html">Главная</a>
+        <span class="breadcrumb__sep">◆</span>
+        <a class="breadcrumb__link" href="catalog.html">Магазин</a>
+        <span class="breadcrumb__sep">◆</span>
+        <span class="breadcrumb__current">Средства для ухода</span>
+      </nav>
+
+      <div class="catalog__container">
+        <!-- Фильтры -->
+        <aside class="catalog__filters">
+          <h2 class="catalog__filters-title">ПРОИЗВОДИТЕЛИ:</h2>
+          <ul class="catalog__filters-list">
+            <li class="catalog__filters-item">
+              <label class="catalog__filters-label">
+                <input type="checkbox" class="catalog__filters-checkbox" checked>
+                <span class="catalog__filters-text">BAXTER OF CALIFORNIA</span>
+              </label>
+            </li>
+            <li class="catalog__filters-item">
+              <label class="catalog__filters-label">
+                <input type="checkbox" class="catalog__filters-checkbox">
+                <span class="catalog__filters-text">MR NATTY</span>
+              </label>
+            </li>
+            <li class="catalog__filters-item">
+              <label class="catalog__filters-label">
+                <input type="checkbox" class="catalog__filters-checkbox" checked>
+                <span class="catalog__filters-text">SUAVECITO</span>
+              </label>
+            </li>
+            <li class="catalog__filters-item">
+              <label class="catalog__filters-label">
+                <input type="checkbox" class="catalog__filters-checkbox">
+                <span class="catalog__filters-text">MALIN+GOETZ</span>
+              </label>
+            </li>
+            <li class="catalog__filters-item">
+              <label class="catalog__filters-label">
+                <input type="checkbox" class="catalog__filters-checkbox">
+                <span class="catalog__filters-text">MURRAY'S</span>
+              </label>
+            </li>
+            <li class="catalog__filters-item">
+              <label class="catalog__filters-label">
+                <input type="checkbox" class="catalog__filters-checkbox" checked>
+                <span class="catalog__filters-text">AMERICAN CREW</span>
+              </label>
+            </li>
+          </ul>
+
+          <h2 class="catalog__filters-title">ГРУППЫ ТОВАРОВ:</h2>
+          <ul class="catalog__filters-list">
+            <li class="catalog__filters-item">
+              <label class="catalog__filters-label">
+                <input type="radio" name="product-group" class="catalog__filters-radio" value="shaving">
+                <span class="catalog__filters-text">БРИТВЕННЫЕ ПРИНАДЛЕЖНОСТИ</span>
+              </label>
+            </li>
+            <li class="catalog__filters-item">
+              <label class="catalog__filters-label">
+                <input type="radio" name="product-group" class="catalog__filters-radio" value="care" checked>
+                <span class="catalog__filters-text">СРЕДСТВА ДЛЯ УХОДА</span>
+              </label>
+            </li>
+            <li class="catalog__filters-item">
+              <label class="catalog__filters-label">
+                <input type="radio" name="product-group" class="catalog__filters-radio" value="accessories">
+                <span class="catalog__filters-text">АКСЕССУАРЫ</span>
+              </label>
+            </li>
+          </ul>
+
+          <button class="catalog__filters-btn" type="button">ПОКАЗАТЬ</button>
+        </aside>
+
+        <!-- Товары -->
+        <div class="catalog__products">
+          <div class="catalog__products-grid">
+            <!-- Товар 1 - Бритвенные принадлежности -->
+            <article class="product-card" data-category="shaving" data-brand="baxter">
+              <div class="product-card__image">
+                <img src="img/product-1.jpg" alt="Набор для путешествий BAXTER OF CALIFORNIA" width="220" height="165">
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">Набор для путешествий<br>«BAXTER OF CALIFORNIA»</h3>
+                <div class="product-card__price">2 900 ₽</div>
+                <button class="product-card__btn" type="button">КУПИТЬ</button>
+              </div>
+            </article>
+
+            <!-- Товар 2 - Средства для ухода -->
+            <article class="product-card" data-category="care" data-brand="baxter">
+              <div class="product-card__image">
+                <img src="img/product-2.jpg" alt="Увлажняющий кондиционер BAXTER OF CALIFORNIA" width="220" height="165">
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">Увлажняющий кондиционер<br>«BAXTER OF CALIFORNIA»</h3>
+                <div class="product-card__price">750 ₽</div>
+                <button class="product-card__btn" type="button">КУПИТЬ</button>
+              </div>
+            </article>
+
+            <!-- Товар 3 - Средства для ухода -->
+            <article class="product-card" data-category="care" data-brand="suavecito">
+              <div class="product-card__image">
+                <img src="img/product-3.jpg" alt="Гель для волос SUAVECITO" width="220" height="165">
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">Гель для волос<br>«SUAVECITO»</h3>
+                <div class="product-card__price">290 ₽</div>
+                <button class="product-card__btn" type="button">КУПИТЬ</button>
+              </div>
+            </article>
+
+            <!-- Товар 4 - Средства для ухода -->
+            <article class="product-card" data-category="care" data-brand="american-crew">
+              <div class="product-card__image">
+                <img src="img/product-4.jpg" alt="Глина для укладки волос AMERICAN CREW" width="220" height="165">
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">Глина для укладки волос<br>«AMERICAN CREW»</h3>
+                <div class="product-card__price">500 ₽</div>
+                <button class="product-card__btn" type="button">КУПИТЬ</button>
+              </div>
+            </article>
+
+            <!-- Товар 5 - Средства для ухода -->
+            <article class="product-card" data-category="care" data-brand="american-crew">
+              <div class="product-card__image">
+                <img src="img/product-5.jpg" alt="Гель для волос AMERICAN CREW" width="220" height="165">
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">Гель для волос<br>«AMERICAN CREW»</h3>
+                <div class="product-card__price">300 ₽</div>
+                <button class="product-card__btn" type="button">КУПИТЬ</button>
+              </div>
+            </article>
+
+            <!-- Товар 6 - Бритвенные принадлежности -->
+            <article class="product-card" data-category="shaving" data-brand="baxter">
+              <div class="product-card__image">
+                <img src="img/product-6.jpg" alt="Набор для бритья BAXTER OF CALIFORNIA" width="220" height="165">
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">Набор для бритья<br>«BAXTER OF CALIFORNIA»</h3>
+                <div class="product-card__price">3 900 ₽</div>
+                <button class="product-card__btn" type="button">КУПИТЬ</button>
+              </div>
+            </article>
+
+            <!-- Товар 7 - Аксессуары -->
+            <article class="product-card" data-category="accessories" data-brand="baxter">
+              <div class="product-card__image">
+                <img src="img/product-7.jpg" alt="Бритва BAXTER OF CALIFORNIA" width="220" height="165">
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">Бритва<br>«BAXTER OF CALIFORNIA»</h3>
+                <div class="product-card__price">1 500 ₽</div>
+                <button class="product-card__btn" type="button">КУПИТЬ</button>
+              </div>
+            </article>
+
+            <!-- Товар 8 - Аксессуары -->
+            <article class="product-card" data-category="accessories" data-brand="mr-natty">
+              <div class="product-card__image">
+                <img src="img/product-8.jpg" alt="Кисть для бритья MR NATTY" width="220" height="165">
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">Кисть для бритья<br>«MR NATTY»</h3>
+                <div class="product-card__price">800 ₽</div>
+                <button class="product-card__btn" type="button">КУПИТЬ</button>
+              </div>
+            </article>
+
+                         <!-- Товар 9 - Аксессуары -->
+             <article class="product-card" data-category="accessories" data-brand="malin-goetz">
+               <div class="product-card__image">
+                 <img src="img/product-9.jpg" alt="Полотенце для лица MALIN+GOETZ" width="220" height="165">
+               </div>
+               <div class="product-card__content">
+                 <h3 class="product-card__title">Полотенце для лица<br>«MALIN+GOETZ»</h3>
+                 <div class="product-card__price">600 ₽</div>
+                 <button class="product-card__btn" type="button">КУПИТЬ</button>
+               </div>
+             </article>
+
+             <!-- Товар 10 - Средства для ухода -->
+             <article class="product-card" data-category="care" data-brand="baxter">
+               <div class="product-card__image">
+                 <img src="img/product-10.jpg" alt="Шампунь для волос BAXTER OF CALIFORNIA" width="220" height="165">
+               </div>
+               <div class="product-card__content">
+                 <h3 class="product-card__title">Шампунь для волос<br>«BAXTER OF CALIFORNIA»</h3>
+                 <div class="product-card__price">450 ₽</div>
+                 <button class="product-card__btn" type="button">КУПИТЬ</button>
+               </div>
+             </article>
+
+             <!-- Товар 11 - Средства для ухода -->
+             <article class="product-card" data-category="care" data-brand="suavecito">
+               <div class="product-card__image">
+                 <img src="img/product-11.jpg" alt="Бальзам для волос SUAVECITO" width="220" height="165">
+               </div>
+               <div class="product-card__content">
+                 <h3 class="product-card__title">Бальзам для волос<br>«SUAVECITO»</h3>
+                 <div class="product-card__price">320 ₽</div>
+                 <button class="product-card__btn" type="button">КУПИТЬ</button>
+               </div>
+             </article>
+
+             <!-- Товар 12 - Средства для ухода -->
+             <article class="product-card" data-category="care" data-brand="american-crew">
+               <div class="product-card__image">
+                 <img src="img/product-12.jpg" alt="Масло для бороды AMERICAN CREW" width="220" height="165">
+               </div>
+               <div class="product-card__content">
+                 <h3 class="product-card__title">Масло для бороды<br>«AMERICAN CREW»</h3>
+                 <div class="product-card__price">680 ₽</div>
+                 <button class="product-card__btn" type="button">КУПИТЬ</button>
+               </div>
+             </article>
+
+             <!-- Товар 13 - Средства для ухода -->
+             <article class="product-card" data-category="care" data-brand="mr-natty">
+               <div class="product-card__image">
+                 <img src="img/product-13.jpg" alt="Воск для волос MR NATTY" width="220" height="165">
+               </div>
+               <div class="product-card__content">
+                 <h3 class="product-card__title">Воск для волос<br>«MR NATTY»</h3>
+                 <div class="product-card__price">420 ₽</div>
+                 <button class="product-card__btn" type="button">КУПИТЬ</button>
+               </div>
+             </article>
+
+             <!-- Товар 14 - Средства для ухода -->
+             <article class="product-card" data-category="care" data-brand="malin-goetz">
+               <div class="product-card__image">
+                 <img src="img/product-14.jpg" alt="Спрей для волос MALIN+GOETZ" width="220" height="165">
+               </div>
+               <div class="product-card__content">
+                 <h3 class="product-card__title">Спрей для волос<br>«MALIN+GOETZ»</h3>
+                 <div class="product-card__price">380 ₽</div>
+                 <button class="product-card__btn" type="button">КУПИТЬ</button>
+               </div>
+             </article>
+          </div>
+
+          <!-- Пагинация -->
+          <div class="catalog__pagination">
+            <!-- Кнопки пагинации создаются динамически -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="page-footer__container">
+      <div class="page-footer__contacts">
+        <p class="page-footer__text">
+          Барбершоп «Бородинский»<br>
+          Адрес: г. Санкт-Петербург, б. Конюшенная, д. 19/8<br>
+          Как нас найти?<br>
+          Телефон: +7 (495) 666-02-66
+        </p>
+      </div>
+      <div class="page-footer__social social">
+        <p class="social__title">Давайте дружить!</p>
+        <ul class="social__list">
+          <li class="social__item">
+            <a class="social__link social__link--vk" href="#" aria-label="Мы в ВКонтакте"><span class="visually-hidden">VK</span></a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--facebook" href="#" aria-label="Мы в Facebook"><span class="visually-hidden">Facebook</span></a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--instagram" href="#" aria-label="Мы в Instagram"><span class="visually-hidden">Instagram</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="page-footer__copyright">
+        <p class="page-footer__text">Разработано:</p>
+        <a class="page-footer__link" href="https://htmlacademy.ru">HTML Academy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>

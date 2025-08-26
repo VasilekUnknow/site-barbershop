@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Барбершоп «Бородинский» — Информация</title>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="page-header">
+    <nav class="main-nav">
+      <a class="main-nav__brand" href="index.html">
+        <img src="img/logo.svg" width="111" height="24" alt="Логотип Барбершоп Бородинский">
+      </a>
+      <ul class="main-nav__list">
+        <li class="main-nav__item"><a class="main-nav__link main-nav__link--active" href="info.html">Информация</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="news.html">Новости</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="price.html">Прайс-лист</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="catalog.html">Магазин</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="contacts.html">Контакты</a></li>
+      </ul>
+      <div class="user-nav">
+        <a class="user-nav__login" href="#" id="login-btn">Вход</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Модальное окно -->
+  <div class="modal-overlay visually-hidden" id="login-modal">
+    <div class="modal">
+      <button class="modal__close" type="button" aria-label="Закрыть">&times;</button>
+      <div class="modal-content">
+        <h2 class="modal-title">ЛИЧНЫЙ КАБИНЕТ</h2>
+        <p class="modal-text">ВВЕДИТЕ ПОЖАЛУЙСТА СВОЙ ЛОГИН И ПАРОЛЬ</p>
+        <form class="modal-form" action="#" method="post">
+          <label for="modal-email">Email</label>
+          <input id="modal-email" type="email" placeholder="Введите ваш email" required>
+          <label for="modal-password">Пароль</label>
+          <input id="modal-password" type="password" placeholder="Введите ваш пароль" required>
+          <button class="modal-submit" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content: Information -->
+  <main class="page-main">
+    <section class="info-page">
+      <h1 class="info-page__title">ИНФОРМАЦИЯ</h1>
+      
+      <nav class="breadcrumb">
+        <a class="breadcrumb__link" href="index.html">Главная</a>
+        <span class="breadcrumb__sep">◆</span>
+        <span class="breadcrumb__current">Информация</span>
+      </nav>
+
+      <div class="info-page__container">
+        <!-- О компании -->
+        <div class="info-page__section">
+          <h2 class="info-page__subtitle">О КОМПАНИИ</h2>
+          <div class="info-page__content">
+            <p class="info-page__text">
+              Барбершоп «Бородинский» — это не просто место для стрижки, это настоящий мужской клуб, где каждый клиент может почувствовать себя особенным. Мы создали пространство, где традиции классического барбершопа сочетаются с современными технологиями и индивидуальным подходом к каждому клиенту.
+            </p>
+            <p class="info-page__text">
+              Наша история началась в 2010 году, когда группа профессиональных барберов решила создать место, где мужчины могли бы не только привести себя в порядок, но и отдохнуть, пообщаться и получить качественный сервис. За эти годы мы стали одним из самых уважаемых барбершопов в Санкт-Петербурге.
+            </p>
+          </div>
+        </div>
+
+        <!-- Наши принципы -->
+        <div class="info-page__section">
+          <h2 class="info-page__subtitle">НАШИ ПРИНЦИПЫ</h2>
+          <div class="info-page__principles">
+            <div class="info-page__principle">
+              <h3 class="info-page__principle-title">КАЧЕСТВО</h3>
+              <p class="info-page__principle-text">
+                Мы используем только лучшие инструменты и профессиональную косметику. Каждый мастер регулярно проходит обучение и следит за новыми тенденциями в индустрии.
+              </p>
+            </div>
+            <div class="info-page__principle">
+              <h3 class="info-page__principle-title">ИНДИВИДУАЛЬНОСТЬ</h3>
+              <p class="info-page__principle-text">
+                Каждый клиент уникален, поэтому мы подбираем стиль и технику стрижки индивидуально, учитывая форму лица, структуру волос и пожелания клиента.
+              </p>
+            </div>
+            <div class="info-page__principle">
+              <h3 class="info-page__principle-title">ТРАДИЦИИ</h3>
+              <p class="info-page__principle-text">
+                Мы чтим традиции классического барбершопа, но не боимся экспериментировать с современными техниками и стилями.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Наши услуги -->
+        <div class="info-page__section">
+          <h2 class="info-page__subtitle">НАШИ УСЛУГИ</h2>
+          <div class="info-page__services">
+            <div class="info-page__service">
+              <h3 class="info-page__service-title">СТРИЖКА</h3>
+              <p class="info-page__service-text">
+                Классические и современные мужские стрижки любой сложности. От простых до эксклюзивных модельных стрижек.
+              </p>
+            </div>
+            <div class="info-page__service">
+              <h3 class="info-page__service-title">БРИТЬЕ</h3>
+              <p class="info-page__service-text">
+                Классическое бритье опасной бритвой с использованием горячих полотенец и профессиональных средств.
+              </p>
+            </div>
+            <div class="info-page__service">
+              <h3 class="info-page__service-title">УХОД ЗА БОРОДОЙ</h3>
+              <p class="info-page__service-text">
+                Стрижка, моделирование и уход за бородой. Придание формы и объема с использованием профессиональных средств.
+              </p>
+            </div>
+            <div class="info-page__service">
+              <h3 class="info-page__service-title">КОНСУЛЬТАЦИИ</h3>
+              <p class="info-page__service-text">
+                Профессиональные консультации по уходу за волосами и бородой, подбору средств и инструментов.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Наша команда -->
+        <div class="info-page__section">
+          <h2 class="info-page__subtitle">НАША КОМАНДА</h2>
+          <div class="info-page__team">
+            <div class="info-page__member">
+              <h3 class="info-page__member-name">АЛЕКСЕЙ ВОЛКОВ</h3>
+              <p class="info-page__member-position">Главный барбер</p>
+              <p class="info-page__member-description">
+                Опыт работы более 10 лет. Специализируется на классических стрижках и бритье. Постоянный участник международных конкурсов барберов.
+              </p>
+            </div>
+            <div class="info-page__member">
+              <h3 class="info-page__member-name">ДМИТРИЙ СМИРНОВ</h3>
+              <p class="info-page__member-position">Старший барбер</p>
+              <p class="info-page__member-description">
+                Мастер современной мужской стрижки. Эксперт по работе с бородой и усами. Автор собственных техник моделирования.
+              </p>
+            </div>
+            <div class="info-page__member">
+              <h3 class="info-page__member-name">СЕРГЕЙ КОЗЛОВ</h3>
+              <p class="info-page__member-position">Барбер-стилист</p>
+              <p class="info-page__member-description">
+                Специалист по креативным стрижкам и окрашиванию. Работает с любыми типами волос и создает уникальные образы.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Наши достижения -->
+        <div class="info-page__section">
+          <h2 class="info-page__subtitle">НАШИ ДОСТИЖЕНИЯ</h2>
+          <div class="info-page__achievements">
+            <div class="info-page__achievement">
+              <span class="info-page__achievement-number">13</span>
+              <p class="info-page__achievement-text">ЛЕТ УСПЕШНОЙ РАБОТЫ</p>
+            </div>
+            <div class="info-page__achievement">
+              <span class="info-page__achievement-number">5000+</span>
+              <p class="info-page__achievement-text">ДОВОЛЬНЫХ КЛИЕНТОВ</p>
+            </div>
+            <div class="info-page__achievement">
+              <span class="info-page__achievement-number">15</span>
+              <p class="info-page__achievement-text">ПРОФЕССИОНАЛЬНЫХ НАГРАД</p>
+            </div>
+            <div class="info-page__achievement">
+              <span class="info-page__achievement-number">100%</span>
+              <p class="info-page__achievement-text">ГАРАНТИЯ КАЧЕСТВА</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Контактная информация -->
+        <div class="info-page__section">
+          <h2 class="info-page__subtitle">КАК С НАМИ СВЯЗАТЬСЯ</h2>
+          <div class="info-page__contacts">
+            <div class="info-page__contact">
+              <h3 class="info-page__contact-title">АДРЕС</h3>
+              <p class="info-page__contact-text">
+                г. Санкт-Петербург,<br>
+                б. Конюшенная, д. 19/8
+              </p>
+            </div>
+            <div class="info-page__contact">
+              <h3 class="info-page__contact-title">ТЕЛЕФОН</h3>
+              <p class="info-page__contact-text">
+                +7 (495) 666-02-66
+              </p>
+            </div>
+            <div class="info-page__contact">
+              <h3 class="info-page__contact-title">РЕЖИМ РАБОТЫ</h3>
+              <p class="info-page__contact-text">
+                Пн-Пт: 10:00 — 22:00<br>
+                Сб-Вс: 10:00 — 19:00
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="page-footer__container">
+      <div class="page-footer__contacts">
+        <p class="page-footer__text">
+          Барбершоп «Бородинский»<br>
+          Адрес: г. Санкт-Петербург, б. Конюшенная, д. 19/8<br>
+          Как нас найти?<br>
+          Телефон: +7 (495) 666-02-66
+        </p>
+      </div>
+      <div class="page-footer__social social">
+        <p class="social__title">Давайте дружить!</p>
+        <ul class="social__list">
+          <li class="social__item">
+            <a class="social__link social__link--vk" href="#" aria-label="Мы в ВКонтакте"><span class="visually-hidden">VK</span></a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--facebook" href="#" aria-label="Мы в Facebook"><span class="visually-hidden">Facebook</span></a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--instagram" href="#" aria-label="Мы в Instagram"><span class="visually-hidden">Instagram</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="page-footer__copyright">
+        <p class="page-footer__text">Разработано:</p>
+        <a class="page-footer__link" href="https://htmlacademy.ru">HTML Academy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>

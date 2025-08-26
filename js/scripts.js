@@ -220,3 +220,187 @@ document.addEventListener('DOMContentLoaded', function() {
     showPage(1);
   }
 });
+
+// Функционал фильтрации товаров в каталоге
+document.addEventListener('DOMContentLoaded', function() {
+  const radioButtons = document.querySelectorAll('.catalog__filters-radio');
+  const checkboxes = document.querySelectorAll('.catalog__filters-checkbox');
+  const productCards = document.querySelectorAll('.product-card[data-category]');
+  const breadcrumbCurrent = document.querySelector('.breadcrumb__current');
+  const catalogTitle = document.querySelector('.catalog__title');
+  const showButton = document.querySelector('.catalog__filters-btn');
+  const paginationContainer = document.querySelector('.catalog__pagination');
+
+  // Проверяем, что мы на странице каталога
+  if (radioButtons.length === 0) {
+    return;
+  }
+
+  // Объект с названиями категорий
+  const categoryNames = {
+    'shaving': 'Бритвенные принадлежности',
+    'care': 'Средства для ухода',
+    'accessories': 'Аксессуары'
+  };
+
+  // Объект с названиями производителей
+  const brandNames = {
+    'baxter': 'BAXTER OF CALIFORNIA',
+    'suavecito': 'SUAVECITO',
+    'american-crew': 'AMERICAN CREW',
+    'gillette': 'GILLETTE',
+    'mr-natty': 'MR NATTY',
+    'malin-goetz': 'MALIN+GOETZ'
+  };
+
+  // Массив исключенных производителей
+  let excludedBrands = [];
+
+  // Функция создания пагинации
+  function createPagination(totalItems) {
+    if (!paginationContainer) return;
+    
+    // Очищаем контейнер пагинации
+    paginationContainer.innerHTML = '';
+    
+    // Если товаров 4 или меньше, пагинация не нужна
+    if (totalItems <= 4) {
+      return;
+    }
+    
+    // Определяем количество страниц
+    let totalPages = 1;
+    if (totalItems > 4 && totalItems <= 8) {
+      totalPages = 2;
+    } else if (totalItems > 8 && totalItems <= 12) {
+      totalPages = 3;
+    } else if (totalItems > 12 && totalItems <= 16) {
+      totalPages = 4;
+    }
+    
+    // Создаем кнопки пагинации
+    for (let i = 1; i <= totalPages; i++) {
+      const link = document.createElement('a');
+      link.href = '#';
+      link.className = 'catalog__pagination-link';
+      link.textContent = i;
+      
+      // Первая страница активна по умолчанию
+      if (i === 1) {
+        link.classList.add('catalog__pagination-link--active');
+      }
+      
+      // Добавляем обработчик клика
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Убираем активный класс со всех ссылок
+        paginationContainer.querySelectorAll('.catalog__pagination-link').forEach(link => {
+          link.classList.remove('catalog__pagination-link--active');
+        });
+        
+        // Добавляем активный класс к текущей ссылке
+        this.classList.add('catalog__pagination-link--active');
+        
+        // Показываем товары для выбранной страницы
+        showPage(i);
+      });
+      
+      paginationContainer.appendChild(link);
+    }
+  }
+
+  // Функция показа страницы
+  function showPage(page) {
+    const checkedRadio = document.querySelector('.catalog__filters-radio:checked');
+    if (!checkedRadio) return;
+    
+    const category = checkedRadio.value;
+    const visibleCards = Array.from(productCards).filter(card => 
+      card.dataset.category === category && !excludedBrands.includes(card.dataset.brand)
+    );
+    
+    // Скрываем все товары
+    productCards.forEach(card => {
+      card.classList.add('hidden');
+    });
+    
+    // Показываем товары для выбранной страницы (4 товара на страницу)
+    const startIndex = (page - 1) * 4;
+    const endIndex = startIndex + 4;
+    
+    visibleCards.slice(startIndex, endIndex).forEach(card => {
+      card.classList.remove('hidden');
+    });
+  }
+
+  // Функция фильтрации товаров
+  function filterProducts(category) {
+    // Скрываем все товары
+    productCards.forEach(card => {
+      card.classList.add('hidden');
+    });
+
+    // Показываем только товары выбранной категории, исключая выбранных производителей
+    const visibleCards = Array.from(productCards).filter(card => 
+      card.dataset.category === category && !excludedBrands.includes(card.dataset.brand)
+    );
+
+    // Показываем первые 4 товара
+    visibleCards.slice(0, 4).forEach(card => {
+      card.classList.remove('hidden');
+    });
+
+    // Создаем пагинацию в зависимости от количества товаров
+    createPagination(visibleCards.length);
+
+    // Обновляем хлебные крошки
+    if (breadcrumbCurrent) {
+      breadcrumbCurrent.textContent = categoryNames[category];
+    }
+
+    // Обновляем заголовок страницы
+    if (catalogTitle) {
+      catalogTitle.textContent = categoryNames[category].toUpperCase();
+    }
+  }
+
+  // Обработчики для чекбоксов производителей
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+      const brand = this.value;
+      
+      if (this.checked) {
+        // Добавляем производителя в список исключенных
+        if (!excludedBrands.includes(brand)) {
+          excludedBrands.push(brand);
+        }
+      } else {
+        // Убираем производителя из списка исключенных
+        excludedBrands = excludedBrands.filter(b => b !== brand);
+      }
+
+      // Применяем фильтрацию к текущей категории
+      const selectedCategory = document.querySelector('.catalog__filters-radio:checked');
+      if (selectedCategory) {
+        filterProducts(selectedCategory.value);
+      }
+    });
+  });
+
+  // Обработчик для кнопки "ПОКАЗАТЬ"
+  if (showButton) {
+    showButton.addEventListener('click', function() {
+      const checkedRadio = document.querySelector('.catalog__filters-radio:checked');
+      if (checkedRadio) {
+        filterProducts(checkedRadio.value);
+      }
+    });
+  }
+
+  // Инициализация - показываем товары категории "care" (средства для ухода)
+  const checkedRadio = document.querySelector('.catalog__filters-radio[value="care"]');
+  if (checkedRadio && checkedRadio.checked) {
+    filterProducts('care');
+  }
+});
